@@ -1,0 +1,28 @@
+{
+    "routes": [
+      {
+        "route": "/login",
+        "rewrite": "/.auth/login/google"
+      },
+      {
+        "route": "/logout",
+        "rewrite": "/.auth/logout"
+      },
+      {
+        "route": "/admin",
+        "allowedRoles": ["admin"]
+      },
+      {
+        "route": "/matter/edit",
+        "allowedRoles": ["admin"]
+      },
+      {
+        "route": "/matter/new",
+        "allowedRoles": ["admin"]
+      }
+    ],
+    "navigationFallback": {
+      "rewrite": "/index.html",
+      "exclude": ["/images/*.{png,jpg,gif}", "/css/*"]
+    }
+}
