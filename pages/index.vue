@@ -29,9 +29,11 @@ export default {
     let user = null;
     if (login) {
       console.log("login: " + login.userId);
+      console.log("idprovider: " + login.identityProvider);
       let url = "/userInfo/" + login.identityProvider + "/" + login.userId
       response = await $axios.get(url);
       user = response.data;
+      console.log(user);
     }
 
     return { matter, login, user };
@@ -43,8 +45,8 @@ export default {
 
     if (this.login && !this.user) {
       this.$router.push('/user/new');
-    }
-    if (this.login && !this.matter) {
+    } 
+    else if (this.login && !this.matter) {
       this.$router.push('/addroot');
     }
     else {
