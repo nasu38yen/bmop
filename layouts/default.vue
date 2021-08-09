@@ -32,7 +32,7 @@
 
 <style>
 .matter-container {
-  max-width: 900px;
+  max-width: 900px !important; 
 }
 .matter-container img{
   max-width: 100%;
