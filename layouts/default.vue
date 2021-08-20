@@ -39,8 +39,8 @@
   max-width: 100%;
 }
 .logo {
-  cursor: pointer;
-  font-size: 1.7rem;
+  cursor: pointer !important;
+  font-size: 1.7rem !important;
 }
 .theme--dark.v-app-bar.v-toolbar.v-sheet {
     background-color: #253c50;
