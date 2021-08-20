@@ -3,7 +3,7 @@
     <v-app-bar clipped-left fixed app>
       <v-container class="matter-container py-0 fill-height">
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-        <v-toolbar-title v-text="title" style="cursor: pointer" @click="$router.push('/matter/root')" />
+        <v-toolbar-title v-text="title" class="wf-sawarabimincho logo" style="cursor: pointer" @click="$router.push('/matter/root')" />
         <v-spacer />
       </v-container>
     </v-app-bar>
@@ -31,6 +31,7 @@
 </template>
 
 <style>
+.wf-sawarabimincho { font-family: "Sawarabi Mincho"; }
 .matter-container {
   max-width: 900px !important; 
 }
@@ -39,6 +40,7 @@
 }
 .logo {
   cursor: pointer;
+  font-size: 1.7rem;
 }
 .theme--dark.v-app-bar.v-toolbar.v-sheet {
     background-color: #253c50;
