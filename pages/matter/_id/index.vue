@@ -3,12 +3,10 @@
     <v-col>
       <matter-content :matter="matter"></matter-content>
       <div class="mt-4">
-        <v-btn :disabled='!prior' :to="priorPage">前ページ</v-btn>
-        <v-btn :disabled='!next' :to="nextPage">次ページ</v-btn>            
-      </div>
-      <div class="mt-4">
         <v-toolbar dense>
-          <v-toolbar-title>関連ページ</v-toolbar-title>
+          <!-- <v-toolbar-title></v-toolbar-title> -->
+            <v-btn :disabled='!prior' :to="priorPage">前ページ</v-btn>
+            <v-btn :disabled='!next' :to="nextPage">次ページ</v-btn>            
           <v-spacer></v-spacer>
           <v-menu offset-y>
             <template v-slot:activator="{ on, attrs }">
@@ -26,8 +24,8 @@
             </v-list>
           </v-menu>
         </v-toolbar>
-        <matter-list v-if="parent" :matters="[parent]" color="blue-grey darken-4"></matter-list>
-        <matter-list v-if="children && (children.length > 0)" :matters="children"></matter-list>
+        <matter-list v-if="parent" :matters="[parent]" color="blue-grey darken-4" type="parent"></matter-list>
+        <matter-list v-if="children && (children.length > 0)" :matters="children" type="children"></matter-list>
       </div>
     </v-col>
   </v-row>
@@ -37,6 +35,11 @@
 import { mapState, mapMutations } from "vuex";
 
 export default ({
+  head() {
+    return {
+      title: '礎石'
+    }
+  },
   data: () => ({
     id: '',
     next: {},
