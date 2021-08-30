@@ -3,7 +3,10 @@
     <v-app-bar clipped-left fixed app>
       <v-container class="matter-container py-0 fill-height">
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-        <v-toolbar-title v-text="title" class="wf-sawarabimincho logo" style="cursor: pointer" @click="$router.push('/matter/root')" />
+        <!-- <v-toolbar-title v-text="title" class="wf-sawarabimincho logo" style="cursor: pointer" @click="$router.push('/matter/root')" /> -->
+        <v-toolbar-title class="logo" style="cursor: pointer" @click="$router.push('/matter/root')">
+          <span class="wf-sawarabigothic">ニュー</span><span class="wf-sawarabimincho">永安寺</span>
+        </v-toolbar-title>
         <v-spacer />
       </v-container>
     </v-app-bar>
@@ -32,6 +35,8 @@
 
 <style>
 .wf-sawarabimincho { font-family: "Sawarabi Mincho"; }
+.wf-sawarabigothic { font-family: "Sawarabi Gothic"; }
+
 .matter-container {
   max-width: 900px !important; 
 }
